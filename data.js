@@ -2,8 +2,7 @@
 window.COLO_DATA = {
   gestante: {
     nome: "Maria Eduarda",
-    ubs: "UBS São João del-Rei",
-    avatar: "https://i.pravatar.cc/100?img=47",
+    avatar: src="Colo_Gestante/assets/duda_avatar.png",
     dpp: "2025-12-10",
     semana: 24,
     dia: 3
@@ -12,7 +11,6 @@ window.COLO_DATA = {
     "Dor de cabeça intensa ou visão turva",
     "Sangramento vaginal",
     "Inchaço súbito nas mãos ou rosto",
-    "Diminuição dos movimentos do bebê"
   ],
   consultas: [
     { tipo: "pré-natal", data: "2025-09-19T14:00:00", local: "UBS Central — Sala 3" },

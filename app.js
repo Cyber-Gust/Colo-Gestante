@@ -88,7 +88,6 @@ function logout() {
   // Header data
   const G = COLO_DATA.gestante;
   $('#nomeGestante').textContent = G.nome;
-  $('#ubsName').textContent = G.ubs;
   $('#semana').textContent = G.semana;
   $('#dia').textContent = G.dia;
   $('#nomeHome').textContent = G.nome;

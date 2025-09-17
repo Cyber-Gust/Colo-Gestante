@@ -29,23 +29,23 @@ a { color: var(--wine); text-decoration: none; }
 .login-body { min-height: 100vh; display:grid; place-items:center; background: radial-gradient(1200px 600px at 10% -10%, #fff 0, #fff0 70%), radial-gradient(1000px 500px at 110% 10%, var(--rose) 0, #fff0 70%), var(--cream); }
 .login-card { width: min(92vw, 420px); background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 2rem; }
 .brand { text-align: center; }
-#brand-logo { width: 160px; height: 80px; border-radius: 16px; margin-bottom:.5rem; }
+#brand-logo { width: 180px; height: 80px; border-radius: 16px; margin-bottom:.5rem; }
 .hint { text-align:center; color: var(--muted); }
 .login-footer { text-align:center; margin-top: 1rem; color: var(--muted); }
 
 .app-body { display:flex; min-height: 100vh; }
-.sidebar { width: 260px; background: #fff; border-right: 1px solid #eee; padding: 1rem; transition: width .25s ease; }
+.sidebar { width: 200px; background: #fff; border-right: 1px solid #eee; padding: 1rem; transition: width .25s ease; }
 .sidebar.collapsed { width: 80px; }
 .sidebar-header { display:flex; align-items:center; gap:.6rem; margin-bottom: 1rem; }
 .logo-mini { width: 80px; height: 28px; border-radius: 8px; }
-.menu { display:grid; gap:.3rem; }
-.menu-item { display:flex; align-items:center; gap:.8rem; padding: .7rem .8rem; border-radius: 10px; color: #111; }
+.menu { display:grid; margin-right: 1rem; gap:.3rem; }
+.menu-item { display:flex; gap:.8rem; padding: .7rem .8rem; border-radius: 10px; color: #111; }
 .menu-item .icon { width: 22px; display:inline-grid; place-items:center; }
 .sidebar .menu-item .label { transition: opacity .2s; }
 .sidebar.collapsed .menu-item .label { opacity: 0; pointer-events:none; width:0; }
 .menu-item:hover { background: #f6f6f7; }
 .menu-item.active { background: var(--wine); color: #fff; }
-.menu-item.logout { margin-top: .6rem; background:#fff0; border:1px dashed #eee; }
+.menu-item.logout { margin-top: 200px; background:#fff0; border:1px dashed #eee; }
 
 .content { flex:1; display:flex; flex-direction:column; min-width:0; }
 .app-header { display:flex; align-items:center; justify-content:space-between; padding: .9rem 1.2rem; position: sticky; top:0; background: rgba(254,253,251,.8); backdrop-filter: blur(8px); border-bottom: 1px solid #eee; z-index: 10; }
