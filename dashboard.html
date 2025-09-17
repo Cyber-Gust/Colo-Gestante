@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colo — App Gestante</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#4e0a26">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="app-body">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="icon-btn" id="toggleSidebar" aria-label="Alternar menu">
+        <!-- hamburger icon -->
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="menu">
+      <a href="#home" class="menu-item active" data-section="home">
+        <span class="icon">🏠</span><span class="label">Início</span>
+      </a>
+      <a href="#calendario" class="menu-item" data-section="calendario">
+        <span class="icon">📅</span><span class="label">Calendário</span>
+      </a>
+      <a href="#educacao" class="menu-item" data-section="educacao">
+        <span class="icon">🎓</span><span class="label">Educação</span>
+      </a>
+      <a href="#sintomas" class="menu-item" data-section="sintomas">
+        <span class="icon">💬</span><span class="label">Relatar Sintomas</span>
+      </a>
+      <a href="#config" class="menu-item" data-section="config">
+        <span class="icon">⚙️</span><span class="label">Configurações</span>
+      </a>
+      <button class="menu-item logout" id="logoutBtn">
+        <span class="icon">🚪</span><span class="label">Sair</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <header class="app-header">
+      <div class="left">
+      </div>
+      <div class="right">
+        <div class="pill">Semana <span id="semana"></span> • Dia <span id="dia"></span></div>
+        <div class="user">
+          <img id="avatar" class="avatar" alt="Foto da gestante">
+          <div class="user-meta">
+            <strong id="nomeGestante">Gestante</strong>
+            <small id="ubsName" class="muted">UBS</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HOME -->
+      <section id="home" class="section visible">
+        <div class="grid">
+          <div class="card hero">
+            <div class="hero-copy">
+              <h2>Bom dia, <span id="nomeHome"></span> 🌸</h2>
+              <p id="orientacaoDia">Hidrate-se bem hoje. Tente beber ao menos 8 copos de água.</p>
+              <div class="cta-wrap">
+                <a class="btn-primary" href="#calendario" data-section="calendario">Ver calendário</a>
+                <a class="btn-outline" id="btnEmergencia" href="tel:192">Emergência 192</a>
+              </div>
+            </div>
+            <div class="hero-art">
+              <div class="carousel" id="heroCarousel">
+                <div class="slides">
+                  <img src="assets/img/hero1.jpg" alt="Gestação acolhida">
+                  <img src="assets/img/hero2.jpg" alt="Cuidado diário">
+                  <img src="assets/img/hero3.jpg" alt="Rede de apoio">
+                </div>
+                <div class="dots"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card next-appointment">
+            <h3>Próxima consulta</h3>
+            <p><strong id="proxConsulta">—</strong></p>
+            <p class="muted" id="proxConsultaLocal">—</p>
+          </div>
+
+          <div class="card alerts">
+            <h3>Sinais de alerta</h3>
+            <ul id="alertas">
+              <!-- filled by JS -->
+            </ul>
+          </div>
+
+          <div class="card quick-actions">
+            <h3>Ações rápidas</h3>
+            <div class="actions">
+              <button class="chip" data-section="sintomas">Relatar sintomas</button>
+              <button class="chip" data-section="calendario">Exames & Vacinas</button>
+              <button class="chip" data-section="educacao">Conteúdos da semana</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALENDÁRIO -->
+      <section id="calendario" class="section">
+        <div class="toolbar">
+          <div class="month-nav">
+            <button id="prevMonth" class="icon-btn" aria-label="Mês anterior">‹</button>
+            <h3 id="monthLabel">Mês</h3>
+            <button id="nextMonth" class="icon-btn" aria-label="Próximo mês">›</button>
+          </div>
+          <div class="legend">
+            <span class="dot prenatal"></span>Pré-natal
+            <span class="dot exam"></span>Exame
+            <span class="dot vaccine"></span>Vacina
+            <span class="dot ultrasound"></span>USG
+            <span class="dot pueric"></span>Puericultura
+          </div>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+        <div id="eventList" class="event-list"></div>
+      </section>
+
+      <!-- EDUCAÇÃO -->
+      <section id="educacao" class="section">
+        <h3>Educação em Saúde — Semana <span id="semanaEdu"></span></h3>
+        <div class="edu-grid" id="eduGrid">
+          <!-- JS fills cards -->
+        </div>
+      </section>
+
+      <!-- SINTOMAS -->
+      <section id="sintomas" class="section">
+        <h3>Relatar sintomas</h3>
+        <form id="formSintomas" class="form">
+          <div class="form-field">
+            <label for="descSintoma">Descreva o que está sentindo</label>
+            <textarea id="descSintoma" rows="4" placeholder="Ex.: dor de cabeça, enjoo, inchaço..."></textarea>
+          </div>
+          <div class="form-field">
+            <label for="gravidade">Gravidade</label>
+            <select id="gravidade">
+              <option>Leve</option>
+              <option>Moderado</option>
+              <option>Intenso</option>
+            </select>
+          </div>
+          <button class="btn-primary" type="submit">Enviar</button>
+          <p class="muted">* Demonstração: enviado para a UBS automaticamente.</p>
+        </form>
+        <div id="sintomasFeed" class="feed"></div>
+      </section>
+
+      <!-- CONFIG -->
+      <section id="config" class="section">
+        <h3>Configurações</h3>
+        <div class="form-field">
+          <label>Foto (URL)</label>
+          <input id="fotoUrl" placeholder="Cole o link da sua foto">
+        </div>
+        <div class="form-field">
+          <label>Notificações</label>
+          <label class="switch">
+            <input type="checkbox" id="notifToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <button class="btn-outline" id="saveConfig">Salvar</button>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>© <span id="year"></span> Colo • Desenvolvido por <strong>BitBloomAI</strong></small>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+</body>
+</html>

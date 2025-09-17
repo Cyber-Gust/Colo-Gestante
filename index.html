@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colo — Login Gestante</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#4e0a26">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Logo" id="brand-logo">
+      <h1>Plataforma Colo</h1>
+    </div>
+
+    <form id="login-form" class="form">
+      <div class="form-field">
+        <label for="cpf">CPF</label>
+        <input id="cpf" name="cpf" placeholder="Digite seu CPF" inputmode="numeric" autocomplete="username">
+      </div>
+      <div class="form-field">
+        <label for="senha">Nº SUS</label>
+        <div class="password-wrap">
+          <input id="senha" name="senha" type="password" placeholder="12345678" autocomplete="current-password">
+          <button type="button" class="showpass" aria-label="Mostrar senha">👁️</button>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">Entrar</button>
+    </form>
+
+    <footer class="login-footer">
+      <small>© <span id="year"></span> Colo • Todos os direitos reservados</small>
+    </footer>
+  </div>
+  <script src="data.js"></script> 
+  
+  <script defer src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
+    }
+  </script>
+</body>
+</html>
