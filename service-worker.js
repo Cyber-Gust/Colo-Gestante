@@ -2,7 +2,7 @@
 const CACHE = 'colo-gestante-v1';
 const ASSETS = [
   'index.html', 'dashboard.html', 'style.css', 'app.js', 'data.js',
-  'assets/logo.png', 'assets/img/hero4.jpg', 'assets/img/hero5.jpg', 'assets/img/hero6.jpg',
+  'assets/logo.png', 'assets/img/hero1.jpg', 'assets/img/hero2.jpg', 'assets/img/hero3.jpg',
   'assets/icons/icon-192.png', 'assets/icons/icon-512.png',
   'manifest.webmanifest'
 ];
