@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicação — Colo App</title>
+  <meta name="theme-color" content="#4e0a26">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-publicacao.css">
+  <script src="data.js"></script>
+  <script src="publicacao.js"></script>
+</head>
+<body class="publication-body">
+
+  <div class="content">
+    <header class="app-header">
+      <div class="left">
+        <a href="dashboard.html" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          <span>Voltar</span>
+        </a>
+      </div>
+      <div class="right">
+        <div class="user">
+          <img src="assets/duda_avatar.png" id="avatar" class="avatar" alt="Foto da gestante">
+          <div class="user-meta">
+            <strong id="nomeGestante">Gestante</strong>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <main id="main-publication" class="main-publication">
+      <article class="publication-card">
+        <img src="" alt="" id="publication-image" class="publication-image">
+        <div class="publication-content">
+          <h1 id="publication-title"></h1>
+          <p id="publication-text"></p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="app-footer">
+      <small>© <span id="year"></span> Colo • Desenvolvido por <a href="https://bitbloomai.com" target="_blank" rel="noopener noreferrer" class="brand-link"><strong>BitBloomAI</strong></a></small>
+    </footer>
+  </div>
+
+</body>
+</html>

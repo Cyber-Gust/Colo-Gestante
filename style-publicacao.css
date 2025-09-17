@@ -1,0 +1,77 @@
+/* Estilos específicos para a página de publicação */
+
+.publication-body {
+  background: var(--cream);
+}
+
+.main-publication {
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.back-link:hover {
+  background-color: var(--gray-100);
+}
+
+.publication-card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.publication-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.publication-content {
+  padding: 2.5rem;
+}
+
+.publication-content h1 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  color: var(--wine);
+  margin-bottom: 1.5rem;
+}
+
+.publication-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--ink);
+  white-space: pre-wrap; /* Mantém as quebras de linha do texto original */
+}
+
+@media (max-width: 768px) {
+  .main-publication {
+    padding: 1rem;
+  }
+  .publication-content {
+    padding: 1.5rem;
+  }
+  .publication-content h1 {
+    font-size: 1.8rem;
+  }
+  .publication-content p {
+    font-size: 1rem;
+  }
+}

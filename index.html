@@ -10,25 +10,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
 </head>
 <body class="login-body">
   <div class="login-card">
     <div class="brand">
-      <img src="assets/logo.png" alt="Logo" id="brand-logo">
+      <img src="assets/logo.png" alt="Logo Colo" id="brand-logo">
       <p>Cuidando de cada detalhe da sua gestação, junto com você.</p>
     </div>
 
     <form id="login-form" class="form">
       <div class="form-field">
         <label for="cpf">CPF</label>
-        <input id="cpf" name="cpf" placeholder="Digite seu CPF" inputmode="numeric" autocomplete="username">
+        <input id="cpf" name="cpf" placeholder="111.222.333-44" inputmode="numeric" autocomplete="username">
       </div>
       <div class="form-field">
         <label for="senha">Nº SUS</label>
         <div class="password-wrap">
           <input id="senha" name="senha" type="password" placeholder="12345678" autocomplete="current-password">
-          <button type="button" class="showpass" aria-label="Mostrar senha">👁️</button>
+          <button type="button" class="showpass" aria-label="Mostrar senha">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </button>
         </div>
       </div>
       <button type="submit" class="btn-primary">Entrar</button>
@@ -38,13 +39,10 @@
       <small>© <span id="year"></span> Colo • Todos os direitos reservados</small>
     </footer>
   </div>
+
+  <div id="toast" class="toast"></div>
+
   <script src="data.js"></script> 
-  
-  <script defer src="app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
-    }
-  </script>
+  <script src="login.js"></script>
 </body>
 </html>
